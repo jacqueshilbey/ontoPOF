@@ -1,0 +1,718 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.limics.fr/ontologies/ontoPOF#"
+     xml:base="http://www.limics.fr/ontologies/ontoPOF"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.limics.fr/ontologies/ontoPOF">
+        <dc:creator>Jacques Hilbey</dc:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourComposantEnonce -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourComposantEnonce">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#aPourComposante"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#JeuDEnonces"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Enonce"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourComposantEpisode -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourComposantEpisode">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#aPourComposante"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Histoire"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourComposantObjet -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourComposantObjet">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#aPourComposante"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ObjetCompose"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Objet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourComposantProjet -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourComposantProjet">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#aPourComposante"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Programme"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Projet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourComposante -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourComposante"/>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourParcoursDeVie -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourParcoursDeVie">
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Objet"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Histoire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#aPourRegionDeValeurs -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#aPourRegionDeValeurs">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Lien"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Qualite"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Quantite"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Role"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#RegionDeValeurs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estCulturellementSitueA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estCulturellementSitueA">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Code"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#ElementDEnonce"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Enonce"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#JeuDEnonces"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#RegionCulturelle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estPartieDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estPartieDe"/>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estPartieSpatialeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estPartieSpatialeDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estPartieDe"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PartieDObjet"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Objet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estPartieSpatiotemporelleDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estPartieSpatiotemporelleDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estPartieDe"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PartieDEpisode"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Episode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estPartieTemporelleDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estPartieTemporelleDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estPartieDe"/>
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ElementDeProjet"/>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Projet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estRealisePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estRealisePar">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#ElementDeProjet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#InterfaceDeProjet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Programme"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Projet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estSitueA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estSpatialementSitueA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estSpatialementSitueA">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#FrontiereDObjet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Objet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#ObjetCompose"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDObjet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#SituationSpatiale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estSpatiotemporellementSitueA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estSpatiotemporellementSitueA">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Episode"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Histoire"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDEpisode"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Transition"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#SituationSpatiotemporelle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#estTemporellementSitueA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#estTemporellementSitueA">
+        <rdfs:subPropertyOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#estSitueA"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#ElementDeProjet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Programme"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Projet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Temporalite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#participeA -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#participeA">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Objet"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#ObjetCompose"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDObjet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Episode"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Histoire"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDEpisode"/>
+                    <rdf:Description rdf:about="http://www.limics.fr/ontologies/ontoPOF#Transition"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#porteSur -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#porteSur">
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#qualifie -->
+
+    <owl:ObjectProperty rdf:about="http://www.limics.fr/ontologies/ontoPOF#qualifie">
+        <rdfs:domain rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Apparition -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Apparition">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Transition"/>
+        <skos:definition xml:lang="fr">Espace-temps initiant un épisode, une partie d&apos;épisode ou une histoire.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Apparition</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Beginning</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Code -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Code">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+        <skos:definition xml:lang="fr">Système de signes permettant la représentation, la manipulation, la transmission de l&apos;information.
+Exemples : langage naturel, langage formel.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Code</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Encoding</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial">
+        <skos:definition xml:lang="fr">Entité continue dans l&apos;espace et limitée dans le temps, qui présente donc des parties temporelles. Ce sont des entités intentionnelles, appelées à se réaliser dans des non continuants.</skos:definition>
+        <skos:prefLabel xml:lang="en">Continuant in space</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Continuant spatial</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel">
+        <skos:definition xml:lang="fr">Entité limitée dans l&apos;espace et continue dans le temps, qui présente donc des parties spatiales.</skos:definition>
+        <skos:prefLabel xml:lang="en">Continuant in time</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Continuant temporel</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Disparition -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Disparition">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#Transition"/>
+        <skos:definition xml:lang="fr">Espace-temps finissant un épisode, une partie d&apos;épisode ou une histoire.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Disparition</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Ending</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ElementDEnonce -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ElementDEnonce">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+        <skos:definition xml:lang="fr">Élément non signifiant par lui-même d&apos;un énoncé.
+Exemples : identifiant, unité de mesure, variable, quantificateur, terme d&apos;une terminologie.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Element d&apos;énoncé</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Statement part</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ElementDeProjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ElementDeProjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial"/>
+        <skos:definition xml:lang="fr">Exemples : instruction, étape, tâche, opération</skos:definition>
+        <skos:prefLabel xml:lang="fr">Element de projet</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Project element</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Enonce -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Enonce">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+        <skos:definition xml:lang="fr">Entité minimale de contenu informationnel.
+Exemples : assertion, interrogation, ordre, énoncé performatif.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Enoncé</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Statement</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Episode -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Episode">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+        <skos:definition xml:lang="fr">Ensemble d&apos;événements possédant une continuité spatiotemporelle et une unité narrative.
+Exemples : passation d&apos;un test psychologique, séjour hospitalier</skos:definition>
+        <skos:prefLabel xml:lang="en">Episode</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Episode</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ExtrantDeProjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ExtrantDeProjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#InterfaceDeProjet"/>
+        <skos:definition xml:lang="fr">Résultat attendu du projet
+Exemples : produit, état, impact, bénéfice</skos:definition>
+        <skos:prefLabel xml:lang="fr">Extrant</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Output or outcome</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#FrontiereDObjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#FrontiereDObjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel"/>
+        <skos:definition xml:lang="fr">Frontière séparant un objet, une partie d&apos;objet ou un objet composé de son environnement, à travers laquelle ont lieu les échanges avec ce même environnement.
+Exemples : limite extérieure d&apos;un objet, surface de contact entre une phase aqueuse et une phase huileuse.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Frontière d&apos;objet</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Object boundary</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Histoire -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Histoire">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+        <skos:definition xml:lang="fr">Ensemble d&apos;épisodes présentant un lien spatiotemporel et narratif
+Exemples : la vie d&apos;un individu</skos:definition>
+        <skos:prefLabel xml:lang="fr">Histoire</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">History</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#InterfaceDeProjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#InterfaceDeProjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial"/>
+        <skos:definition xml:lang="fr">Ressource requise ou résultat attendu d&apos;un projet, d&apos;un élément de projet ou d&apos;un programme, considérés non pas au niveau des instances mais à celui des types.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Interface de projet</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#IntrantDeProjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#IntrantDeProjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#InterfaceDeProjet"/>
+        <skos:definition xml:lang="fr">Ressource prévue pour pouvoir faire aboutir le projet</skos:definition>
+        <skos:prefLabel xml:lang="en">Input</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Intrant</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#JeuDEnonces -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#JeuDEnonces">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+        <skos:definition xml:lang="fr">Ensemble d&apos;énoncés présentant une unité informationnelle.
+Exemples : théorie, mapping, paramétrage, jeu de données.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Jeu d&apos;énoncés</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Set of statements</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Lien -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Lien">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+        <skos:definition xml:lang="fr">Propriété permettant de qualifier une composition d&apos;entités.
+Exemples : agrégation, structure, correspondance.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Lien</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Relationship</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#NonContinuant -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#NonContinuant">
+        <skos:definition xml:lang="fr">Entité limité dans l&apos;espace et dans le temps, présentant donc des parties spatiales et des parties temporelles.
+Exemples : une rencontre sportive, la vie d&apos;un individu.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Non continuant</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Non-continuant</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Objet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Objet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel"/>
+        <skos:definition xml:lang="fr">entité individuée par l&apos;espace qu&apos;elle occupe et considérée comme continuant dans le temps ; une telle entité a des parties spatiales mais pas de parties temporelles : elle est tout entière présente à chaque instant de son existence.
+Exemples : chaise, arbre, animal, être humain.</skos:definition>
+        <skos:prefLabel xml:lang="en">Object</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Objet</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#ObjetCompose -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#ObjetCompose">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel"/>
+        <skos:definition xml:lang="fr">Objet composé d&apos;autres objets
+Exemples : Machine, agrégat, groupe humain.</skos:definition>
+        <skos:prefLabel xml:lang="en">Compound object</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Objet composé</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#PartieDEpisode -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDEpisode">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+        <skos:definition xml:lang="fr">Exemples : événement soudain, action, processus</skos:definition>
+        <skos:prefLabel xml:lang="en">Episode part</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Partie d&apos;épisode</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#PartieDObjet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#PartieDObjet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel"/>
+        <skos:definition xml:lang="fr">Partie spatiale d&apos;un objet, ne constituant pas elle-même un objet individué.
+Exemples : valve d&apos;un ballon, feuille d&apos;un arbre, nez.</skos:definition>
+        <skos:prefLabel xml:lang="en">Object part</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Partie d&apos;objet</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#PluriContinuant -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant">
+        <skos:definition xml:lang="fr">Entité susceptible d&apos;être instanciée dans plusieurs espace-temps.</skos:definition>
+        <skos:prefLabel xml:lang="en">Pluricontinuant</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Pluricontinuant</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Programme -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Programme">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial"/>
+        <skos:definition xml:lang="fr">Ensemble de projets coordonnés
+Exemples : projet d&apos;essai clinique multicentrique, programme de construction d&apos;un lotissement, progiciel de gestion intégrée</skos:definition>
+        <skos:prefLabel xml:lang="en">Program</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Programme</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Projet -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Projet">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial"/>
+        <skos:definition>Succession planifiée d&apos;activités. 
+Exemples : projet d&apos;étude clinique, projet d&apos;aménagement urbain, programme informatique, procédure d&apos;évacuation d&apos;un bâtiment. 
+Un même projet peut connaître plusieurs réalisations dans différents événements.</skos:definition>
+        <skos:prefLabel xml:lang="en">Project</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Projet</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#PurContinuant -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#PurContinuant">
+        <skos:definition xml:lang="fr">Entité continue dans l&apos;espace et dans le temps, donc sans partie spatiale ni temporelle. Ces entités servent à qualifier les entités des autres types.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Pur continuant</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Pure continuant</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Qualite -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Qualite">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+        <skos:definition xml:lang="fr">Propriété permettant de qualifier un tout par différence avec un autre tout, exprimable par une variable catégorielle.
+Exemples : niveau scolaire, situation familiale, couleur, texture.</skos:definition>
+        <skos:prefLabel xml:lang="en">Quality</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Qualité</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Quantite -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Quantite">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+        <skos:definition xml:lang="fr">Propriété permettant de qualifier une partie par différence avec une autre partie, exprimable par une variable quantitative.
+Exemples : masse, volume, vitesse, température, nombre d&apos;objets.</skos:definition>
+        <skos:prefLabel xml:lang="en">Quantity</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Quantité</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#RegionCulturelle -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#RegionCulturelle">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PluriContinuant"/>
+        <skos:definition xml:lang="fr">Domaine de connaissance auquel est susceptible d&apos;appartenir une information.
+Exemples : arts, sciences, médecine, psychiatrie, cognition sociale.</skos:definition>
+        <skos:prefLabel xml:lang="en">Cultural domain</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Région culturelle</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#RegionDeValeurs -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#RegionDeValeurs">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+        <skos:definition xml:lang="fr">Ensemble de valeurs que peuvent prendre une qualité, une quantité, un rôle ou un lien spécifiques.
+Exemples : intervalle de température interne humaine, ensemble des textures possibles d&apos;un tissu, ensemble des rôles qui peuvent être tenus dans une organisation.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Région de valeurs</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Value region</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Role -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Role">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#PurContinuant"/>
+        <skos:definition xml:lang="fr">Propriété permettant de qualifier une interaction entre un individu et son environnement.
+Exemples : rôle social, fonction, disposition.</skos:definition>
+        <skos:prefLabel xml:lang="en">Role</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Rôle</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#SituationSpatiale -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#SituationSpatiale">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantTemporel"/>
+        <skos:definition xml:lang="fr">localisation spatiale d&apos;un objet
+Exemples : localisation dans un système de référence de coordonnées, dans un système topologique, dans un graphe.</skos:definition>
+        <skos:prefLabel xml:lang="fr">Situation spatiale</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Spatial location</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#SituationSpatiotemporelle -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#SituationSpatiotemporelle">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+        <skos:prefLabel xml:lang="fr">Situation spatiotemporelle</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Spatiotemporal location</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Temporalite -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Temporalite">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#ContinuantSpatial"/>
+        <skos:prefLabel xml:lang="en">Temporal location</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.limics.fr/ontologies/ontoPOF#Transition -->
+
+    <owl:Class rdf:about="http://www.limics.fr/ontologies/ontoPOF#Transition">
+        <rdfs:subClassOf rdf:resource="http://www.limics.fr/ontologies/ontoPOF#NonContinuant"/>
+        <skos:definition xml:lang="fr">Instant et lieu de début ou de fin d&apos;un épisode, d&apos;une partie d&apos;épisode ou d&apos;une histoire.</skos:definition>
+        <skos:prefLabel xml:lang="en">Transition</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">Transition</skos:prefLabel>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
